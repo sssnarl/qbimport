@@ -40,6 +40,7 @@ def sanitizeInvoice(fin, fout):
             for row in csv_reader:
                 row['description'] = row['description'].replace('/n','').replace(',','')
                 row['product'] = row['product'][:31].strip()
+                row['company'] = row['product'][:41].strip()
                 csv_writer.writerow(row)
             print("Payment Data Sanitized")
 
